@@ -1,3 +1,5 @@
+# Part A: Saving for a House
+
 # asking user for inputs
 yearly_salary = float(input("Please input your starting yearly salary: "))
 portion_saved  = float(input("Please input your portion of salary to be saved: "))
