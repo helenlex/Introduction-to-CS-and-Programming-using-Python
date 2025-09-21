@@ -13,10 +13,10 @@ r = 0.05
 months = 0
 
 # calculation of down payment before WHILE loop
-down_paynent = cost_of_dream_home * portion_down_payment
+down_payment = cost_of_dream_home * portion_down_payment
 
 # WHILE loop that ends when savings amount can pay off down payment
-while amount_saved < down_paynent:
+while amount_saved < down_payment:
     amount_saved += (monthly_salary * portion_saved) + amount_saved * (r/12)
     months += 1
     #print(amount_saved)
