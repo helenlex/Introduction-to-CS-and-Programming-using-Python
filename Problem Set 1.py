@@ -23,3 +23,34 @@ while amount_saved < down_payment:
 
 #answer for the user
 print("Number of months: ", months)
+
+
+# Part B: Saving with a raise
+
+# asking the user for inputs
+yearly_salary = float(input("Please input your starting yearly salary: "))
+portion_saved  = float(input("Please input your portion of salary to be saved: "))
+cost_of_dream_home = float(input("Please input the cost of your dream home: "))
+semi_annual_raise = float(input("Please input your semi annual raise: "))
+
+# setting variables
+portion_down_payment = 0.25
+amount_saved = 0
+r = 0.05
+months = 0
+
+# calculation of down payment before WHILE loop
+down_payment = cost_of_dream_home * portion_down_payment
+
+# WHILE loop that has an if condition that for every 6 months, a semi annual raise is added onto the yearly salary
+
+while amount_saved < down_payment:
+    amount_saved += ((yearly_salary / 12) * portion_saved) + amount_saved * (r/12)
+    months += 1
+    if months % 6 == 0:
+        yearly_salary += (yearly_salary * semi_annual_raise)
+        #print(months)
+        #print(yearly_salary)
+
+#answer for the user
+print("Number of months: ", months)
