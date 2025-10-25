@@ -54,3 +54,48 @@ while amount_saved < down_payment:
 
 #answer for the user
 print("Number of months: ", months)
+
+# Part C: Choosing an Interest Rate
+
+#variables for "amount saved calculation" while loop
+cost = float(800000)
+dp = cost * 0.25
+r = float(0)
+months = 36
+amount_saved = 0
+
+#Variables related to r calculation
+low = float(0)
+high = float(1)
+steps = 0
+
+#Input
+initial = float(input("Please enter your initial deposit: "))
+
+#flags and tests before "amount saved calculation" while loop starts
+flag_already_have_down_payment = 0
+flag_impossible = 0
+impossible_test = (initial * (1+1/12)**months)
+
+# if initial is already enough to cover down payment, best rate is 0.0
+if initial >= (dp-100):
+   flag_already_have_down_payment = 1
+   r = 0.0
+# if rate is already 1.0 (100%) but amount saved is still less than the down payment, this means it's impossible for best rate to be between 0 - 100
+elif impossible_test < dp:
+    flag_impossible = 1
+    r = None
+
+while ((amount_saved < (dp-100)) or (amount_saved > (dp+100))) and flag_already_have_down_payment == 0 and flag_impossible == 0:
+    r = (low + high) / 2
+    steps += 1
+    amount_saved = initial * (1+r/12)**months
+    if amount_saved > (dp+100):
+        low = low
+        high = r
+    elif amount_saved < (dp-100):
+        low = r
+        high = high
+
+print("Best savings rate:", r)
+print("Steps in bisection search:", steps)
