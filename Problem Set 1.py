@@ -77,7 +77,7 @@ flag_already_have_down_payment = 0
 flag_impossible = 0
 impossible_test = (initial * (1+1/12)**months)
 
-# if initial is already enough to cover down payment, best rate is 0.0
+# if initial is already enough to cover down payment(-100) best rate is 0.0
 if initial >= (dp-100):
    flag_already_have_down_payment = 1
    r = 0.0
