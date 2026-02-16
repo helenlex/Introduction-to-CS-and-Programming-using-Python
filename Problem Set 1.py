@@ -1,5 +1,11 @@
 # Part A: Saving for a House
 
+#Write a program to calculate how many months it will take you to save up enough money for a down payment. You will want your main variables to be floats, so you should cast user inputs to floats.   
+#1. Your program should ask the user to enter the following variables:
+#2. The starting annual salary (annual_salary)
+#3. The portion of salary to be saved (portion_saved)
+#4. The cost of your dream home (total_cost)
+
 # asking user for inputs
 yearly_salary = float(input("Please input your starting yearly salary: "))
 portion_saved  = float(input("Please input your portion of salary to be saved: "))
@@ -26,6 +32,11 @@ print("Number of months: ", months)
 
 
 # Part B: Saving with a raise
+#Write a program to calculate how many months it will take you save up enough money for a down payment.  LIke before, assume that your investments earn a return of r = 0.04 (or 4%) and the required down payment percentage is 0.25 (or 25%).  Have the user enter the following variables:
+#1. The starting annual salary (annual_salary)
+#2. The percentage of salary to be saved (portion_saved)
+#3. The cost of your dream home (total_cost)
+#4. The semi­annual salary raise (semi_annual_raise)
 
 # asking the user for inputs
 yearly_salary = float(input("Please input your starting yearly salary: "))
@@ -56,6 +67,8 @@ while amount_saved < down_payment:
 print("Number of months: ", months)
 
 # Part C: Choosing an Interest Rate
+#Write a program to calculate the best savings rate, as a function of your starting salary.
+#You should use bisection search to help you do this efficiently. You should keep track of the number of steps it takes your bisections search to finish. You should be able to reuse some of the code you wrote for part B in this problem.  
 
 #variables for "amount saved calculation" while loop
 cost = float(800000)
